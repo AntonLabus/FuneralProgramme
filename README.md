@@ -24,8 +24,8 @@ This website serves families during difficult times by providing:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/funeral-programmes-website.git
-   cd funeral-programmes-website
+   git clone https://github.com/AntonLabus/FuneralProgramme.git
+   cd FuneralProgramme
    ```
 
 2. **Install dependencies**
@@ -104,7 +104,7 @@ tests/                     # End-to-end tests
 
 ### One-Click Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yourusername/funeral-programmes-website)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/AntonLabus/FuneralProgramme)
 
 ### Manual Deployment
 
