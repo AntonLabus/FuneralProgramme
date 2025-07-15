@@ -50,7 +50,7 @@ const Contact = () => {
       } else {
         setSubmitMessage('There was an error sending your message. Please try again or call us directly.')
       }
-    } catch (error) {
+    } catch {
       setSubmitMessage('There was an error sending your message. Please try again or call us directly.')
     }
 

@@ -1,25 +1,46 @@
 import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import Hero from '@/components/Hero'
+import { ReactNode } from 'react'
+
+// Define proper types for component props
+interface MockMotionProps {
+  children: ReactNode
+  [key: string]: unknown
+}
+
+interface MockImageProps {
+  alt: string
+  [key: string]: unknown
+}
+
+interface MockLinkProps {
+  children: ReactNode
+  href: string
+  [key: string]: unknown
+}
 
 // Mock framer-motion to avoid issues in test environment
 jest.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-    h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
-    p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
+    div: ({ children, ...props }: MockMotionProps) => <div {...props}>{children}</div>,
+    h1: ({ children, ...props }: MockMotionProps) => <h1 {...props}>{children}</h1>,
+    p: ({ children, ...props }: MockMotionProps) => <p {...props}>{children}</p>,
   },
 }))
 
 // Mock Next.js Image component
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ alt, ...props }: any) => <img alt={alt} {...props} />,
+  default: ({ alt, src, ...props }: MockImageProps & { src?: string }) => (
+    <div data-testid="mock-image" data-alt={alt} data-src={src} {...props} />
+  ),
 }))
 
 // Mock Next.js Link component
 jest.mock('next/link', () => ({
   __esModule: true,
-  default: ({ children, href, ...props }: any) => (
+  default: ({ children, href, ...props }: MockLinkProps) => (
     <a href={href} {...props}>
       {children}
     </a>
