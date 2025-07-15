@@ -1,6 +1,8 @@
 # Funeral Programmes Website
 
+[![CI/CD Pipeline](https://github.com/AntonLabus/FuneralProgramme/actions/workflows/ci.yml/badge.svg)](https://github.com/AntonLabus/FuneralProgramme/actions/workflows/ci.yml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_BADGE_ID/deploy-status)](https://app.netlify.com/sites/YOUR_SITE_NAME/deploys)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A compassionate, elegant marketing website for a funeral programmes design service. Built with Next.js 15, TypeScript, and Tailwind CSS to honor loved ones' memories with beautiful, personalized tributes.
 
