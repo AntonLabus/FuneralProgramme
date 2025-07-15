@@ -1,0 +1,40 @@
+// This page is a static HTML export for Netlify Forms detection.
+// It is not rendered as a React component and contains no dynamic code.
+
+export const metadata = {
+  title: 'Contact Form (Netlify Detection)',
+  description: 'Hidden static form for Netlify Forms detection.'
+};
+
+export default function Page() {
+  return (
+    <html lang="en">
+      <head>
+        <title>Contact Form</title>
+      </head>
+      <body>
+        {/* This form is used by Netlify to detect the form structure */}
+        {/* It will not be visible to users */}
+        <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="tel" name="phone" />
+          <select name="serviceType">
+            <option value="simple">Simple Programme</option>
+            <option value="traditional">Traditional Programme</option>
+            <option value="premium">Premium Programme</option>
+            <option value="custom">Custom Design</option>
+          </select>
+          <select name="urgency">
+            <option value="1-2 days">Within 1-2 days</option>
+            <option value="3-5 days">Within 3-5 days</option>
+            <option value="1 week">Within 1 week</option>
+            <option value="flexible">I&apos;m flexible</option>
+          </select>
+          <textarea name="message"></textarea>
+          <input type="hidden" name="bot-field" />
+        </form>
+      </body>
+    </html>
+  );
+}

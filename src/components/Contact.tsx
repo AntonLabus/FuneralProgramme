@@ -92,10 +92,18 @@ const Contact = () => {
               name="contact"
               method="POST"
               data-netlify="true"
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="contact" />
+
+              {/* Honeypot field for spam protection */}
+              <div style={{ display: 'none' }}>
+                <label>
+                  Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+                </label>
+              </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>

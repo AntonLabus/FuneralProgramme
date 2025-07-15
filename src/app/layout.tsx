@@ -79,6 +79,32 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className={inter.className}>
         {children}
+        
+        {/* Hidden form for Netlify form detection */}
+        <form 
+          name="contact" 
+          data-netlify="true" 
+          data-netlify-honeypot="bot-field" 
+          hidden
+        >
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="tel" name="phone" />
+          <textarea name="message"></textarea>
+          <select name="serviceType">
+            <option value="">Select a service</option>
+            <option value="simple">Simple Programme</option>
+            <option value="standard">Standard Programme</option>
+            <option value="premium">Premium Programme</option>
+            <option value="custom">Custom Design</option>
+          </select>
+          <select name="urgency">
+            <option value="standard">Standard (3-5 days)</option>
+            <option value="urgent">Urgent (24-48 hours)</option>
+            <option value="rush">Rush (Same day)</option>
+          </select>
+        </form>
+        
         <script
           defer
           data-domain="funeral-programmes.netlify.app"
